@@ -1,3 +1,5 @@
+
+
 import ExpenseDate from './ExpenseDate';
 
 import './ExpenseItem.css';
@@ -5,7 +7,12 @@ import './ExpenseItem.css';
 
 
 function ExpenseItem(props) {
-
+    const handleDeleteExpense = () => {
+        const expenseItemElement = document.querySelector('.expense-item');
+        if (expenseItemElement) {
+          expenseItemElement.remove();
+        }
+      };
 
   
 
@@ -18,6 +25,7 @@ function ExpenseItem(props) {
         <h2 className="expense-item h2">{props.LocationOfExpenditure}</h2>
         <div className="expense-item__price">${props.amount}</div>
         </div>
+        <button onClick={handleDeleteExpense}>Delete Expense</button>
         
     </div>}
 
