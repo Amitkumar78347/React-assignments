@@ -8,12 +8,12 @@ import './ExpenseItem.css';
 
 function ExpenseItem(props) {
 
-  const [title,setTitle]= useState(props.title);
+  const [amount,setAmount]= useState(props.amount);
 
   
   const clickHandler = () => {
-    setTitle('updated');
-    console.log(title);
+    setAmount('100');
+    console.log(amount);
   };
 
 
@@ -23,11 +23,11 @@ function ExpenseItem(props) {
     <ExpenseDate date={props.date}></ExpenseDate>
 
     <div className="expense-item__description">
-      <h2 className="expense-item h2">{title}</h2>
+      <h2 className="expense-item h2">{props.title}</h2>
       <h2 className="expense-item h2">{props.LocationOfExpenditure}</h2>
-      <div className="expense-item__price">${props.amount}</div>
+      <div className="expense-item__price">${amount}</div>
     </div>
-    <button onClick={clickHandler}>Change Title</button>
+    <button onClick={clickHandler}>Change Expense</button>
 
   </div>
 }
